@@ -4,6 +4,8 @@
  */
 package com.mycompany.exemplopdv.views;
 
+import com.mycompany.exemplopdv.models.Cliente;
+
 /**
  *
  * @author romul
@@ -158,6 +160,11 @@ public class TelaClientes extends javax.swing.JFrame {
         jLabel4.setText("Email:");
 
         btnConfirmarCadastroCliente.setText("Confirmar");
+        btnConfirmarCadastroCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConfirmarCadastroClienteActionPerformed(evt);
+            }
+        });
 
         btnCancelarCadastroCliente.setText("Cancelar");
 
@@ -352,6 +359,20 @@ public class TelaClientes extends javax.swing.JFrame {
     private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton3ActionPerformed
+
+    private void btnConfirmarCadastroClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarCadastroClienteActionPerformed
+       
+        //1) Passando os dados da interface para um objeto
+        String cpf = txtCPFCadastro.getText();
+        String nome = txtNomeCadastro.getText();
+        String email = txtEmailCadastro.getText();
+        
+        Cliente objCadastrar = new Cliente(nome,email,cpf);
+        
+        //TODO: 2) Passar o objeto para o banco de dados
+        
+        
+    }//GEN-LAST:event_btnConfirmarCadastroClienteActionPerformed
 
     /**
      * @param args the command line arguments

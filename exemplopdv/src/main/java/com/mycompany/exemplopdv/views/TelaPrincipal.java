@@ -204,7 +204,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Código Venda", "Data", "Horário", "Valor Total da Venda", "Cliente"
+                "Código Venda", "Data", "Horário", "Valor Total", "Cliente"
             }
         ));
         jScrollPane2.setViewportView(jTable2);
