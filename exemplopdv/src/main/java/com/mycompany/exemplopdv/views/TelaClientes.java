@@ -4,7 +4,9 @@
  */
 package com.mycompany.exemplopdv.views;
 
+import com.mycompany.exemplopdv.dao.ClienteDAO;
 import com.mycompany.exemplopdv.models.Cliente;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -369,8 +371,16 @@ public class TelaClientes extends javax.swing.JFrame {
         
         Cliente objCadastrar = new Cliente(nome,email,cpf);
         
-        //TODO: 2) Passar o objeto para o banco de dados
+        //2) Passar o objeto para o banco de dados
+        boolean retornoBanco = ClienteDAO.salvar(objCadastrar);
         
+        if (retornoBanco) {
+            JOptionPane.showMessageDialog(rootPane, 
+                    "Cliente cadastrado com sucesso!");
+        }else{
+            JOptionPane.showMessageDialog(rootPane,
+                    "Falha ao cadastrar");
+        }
         
     }//GEN-LAST:event_btnConfirmarCadastroClienteActionPerformed
 
